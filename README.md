@@ -41,7 +41,7 @@ This video demonstrates:
 - Displaying structured career advice
 
 ---
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Backend:** Python, Flask  
 - **Frontend:** HTML, CSS  
@@ -63,13 +63,11 @@ project-root/
 ```
 
 ---
-## 📥 Clone the Repository
-
-First, clone the project to your local machine:
+##  Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/naz-can-code/GenAI-career-advisor.git
+cd GenAI-career-advisor
 ```
 ---
 
@@ -134,7 +132,7 @@ cd your-repo-name
 - **`app_simple.py`** - Main Flask backend (clean, minimal comments)
 - **`config.py`** - Loads Google API credentials
 - **`index.html`** - Frontend form and UI
-- **`.env`** - API key (never commit this!)
+- **`.env`** - API key 
 - **`requirements.txt`** - Python dependencies
 
 ### Key Features
