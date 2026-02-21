@@ -59,7 +59,8 @@ project-root/
 ├── config.py                   # Configuration & settings
 ├── requirements.txt            # Python dependencies
 ├── .env                        # Environment variables 
-└── index.html                  # Main HTML file
+├── templates/
+│   └── index.html
 ```
 
 ---
