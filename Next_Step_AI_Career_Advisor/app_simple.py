@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from dotenv import load_dotenv
 import google.generativeai as genai
@@ -18,10 +18,11 @@ genai.configure(api_key=API_KEY)
 app = Flask(__name__)
 CORS(app)
 
+
 # ADD THIS PART:
 @app.route('/')
 def home():
-    return "The Python Server is ALIVE on Port 5001!"
+    return render_template("index.html")
 
 @app.route('/generate-prompt', methods=['POST'])
 def generate_prompt():
@@ -51,8 +52,8 @@ def generate_prompt():
     f"Subjects They Enjoy: {subject}\n"
     f"What They Enjoy Most: {workstyle}\n"
     f"Problem Solving Style: {problem_style}\n"
-    f"Task Preference: {task_preference}\n"
-    f"Personality Description: {personality_type}\n\n"
+    f"Task Preference: {task_pref}\n"
+    f"Personality Description: {personality}\n\n"
     "Based on this profile:\n"
     "1. Write a short motivational paragraph.\n"
     "2. Suggest 3 highly suitable career paths.\n"
@@ -94,5 +95,4 @@ def generate_prompt():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 if __name__ == '__main__':
-
     app.run(debug=True, host='0.0.0.0', port=5001)
